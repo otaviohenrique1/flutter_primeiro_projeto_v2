@@ -132,6 +132,11 @@ class _FormScreenState extends State<FormScreen> {
                         print(nameController.text);
                         print(difficultyController.text);
                         print(imageController.text);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Printando nova tarefa"),
+                          ),
+                        );
                       }
                     },
                     child: const Text("Adicionar"),
