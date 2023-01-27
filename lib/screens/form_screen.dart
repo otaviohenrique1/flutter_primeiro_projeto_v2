@@ -62,6 +62,9 @@ class _FormScreenState extends State<FormScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  onChanged: (text) {
+                    setState(() {});
+                  },
                   controller: imageController,
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
@@ -106,9 +109,11 @@ class _FormScreenState extends State<FormScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      nameController.clear();
-                      difficultyController.clear();
-                      imageController.clear();
+                      setState(() {
+                        nameController.clear();
+                        difficultyController.clear();
+                        imageController.clear();
+                      });
                     },
                     child: const Text("Limpar"),
                   ),
