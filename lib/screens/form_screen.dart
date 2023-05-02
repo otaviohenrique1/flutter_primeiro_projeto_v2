@@ -20,10 +20,10 @@ class _FormScreenState extends State<FormScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Nova Tarefa"),
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.arrow_back),
-          ),
+          // leading: IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(Icons.arrow_back),
+          // ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -129,14 +129,18 @@ class _FormScreenState extends State<FormScreen> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+                        // ignore: avoid_print
                         print(nameController.text);
+                        // ignore: avoid_print
                         print(difficultyController.text);
+                        // ignore: avoid_print
                         print(imageController.text);
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text("Printando nova tarefa"),
                           ),
                         );
+                        Navigator.pop(context);
                       }
                     },
                     child: const Text("Adicionar"),

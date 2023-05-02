@@ -199,9 +199,9 @@ class _TaskState extends State<Task> {
                                 nivel++;
                               });
                             },
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: const [
+                              children: [
                                 Icon(Icons.arrow_drop_up),
                                 Text(
                                   "UP",
