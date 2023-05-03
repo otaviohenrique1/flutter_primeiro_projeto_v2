@@ -27,7 +27,8 @@ class TaskInherited extends InheritedWidget {
   }
 
   static TaskInherited of(BuildContext context) {
-    final TaskInherited? result = context.dependOnInheritedWidgetOfExactType();
+    final TaskInherited? result =
+        context.dependOnInheritedWidgetOfExactType<TaskInherited>();
     assert(result != null, "No found in context");
     return result!;
   }
@@ -42,3 +43,8 @@ class TaskInherited extends InheritedWidget {
     return oldWidget.taskList.length != taskList.length;
   }
 }
+
+/*
+  O BuildContext é um objeto que fornece informações sobre a localização atual do widget na árvore de widgets. É um argumento obrigatório para muitos métodos dentro do Flutter e é usado para recuperar informações, como a localização do tema atual, o objeto Navigator, etc.
+  O BuildContext é geralmente usado em conjunto com o método BuildContext.of(), que é usado para recuperar informações do contexto atual.
+*/

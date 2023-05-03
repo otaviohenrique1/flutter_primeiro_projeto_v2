@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_primeiro_projeto_v2/data/task_inherited.dart';
 import 'package:flutter_primeiro_projeto_v2/screens/form_screen.dart';
-import '../components/task.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -17,25 +17,29 @@ class _InitialScreenState extends State<InitialScreen> {
         // leading: Container(),
         title: const Text("Tarefas"),
       ),
-      body: ListView(
-        children: const [
-          Task("Aprender Dart", "assets/images/dart_logo.png", 3),
-          Task("Aprender Javascript", "assets/images/javascript_logo.png", 2),
-          Task("Aprender PHP", "assets/images/php_logo.png", 2),
-          Task("Aprender C#", "assets/images/c_sharp_logo.png", 3),
-          Task("Aprender Python", "assets/images/python_logo.png", 4),
-          Task("Aprender R", "assets/images/r_logo.png", 5),
-          SizedBox(
-            height: 80,
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 80),
+        child: ListView(
+          children: TaskInherited.of(context).taskList,
+          // children: const [
+          //   Task("Aprender Dart", "assets/images/dart_logo.png", 3),
+          //   Task("Aprender Javascript", "assets/images/javascript_logo.png", 2),
+          //   Task("Aprender PHP", "assets/images/php_logo.png", 2),
+          //   Task("Aprender C#", "assets/images/c_sharp_logo.png", 3),
+          //   Task("Aprender Python", "assets/images/python_logo.png", 4),
+          //   Task("Aprender R", "assets/images/r_logo.png", 5),
+          //   SizedBox(
+          //     height: 80,
+          //   )
+          // ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FormScreen(),
+                builder: (contextNew) => const FormScreen(),
               ));
         },
         child: const Icon(Icons.add),
