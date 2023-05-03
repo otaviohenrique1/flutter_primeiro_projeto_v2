@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_primeiro_projeto_v2/data/task_inherited.dart';
 
 class FormScreen extends StatefulWidget {
-  const FormScreen({super.key});
+  const FormScreen({
+    super.key,
+    required this.taskContext,
+  });
+
+  final BuildContext taskContext;
 
   @override
   State<FormScreen> createState() => _FormScreenState();
@@ -63,7 +68,8 @@ class _FormScreenState extends State<FormScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       validator: (value) {
-                        if (value!.isEmpty ||
+                        if (value == null ||
+                            value.isEmpty ||
                             int.parse(value) > 5 ||
                             int.parse(value) < 1) {
                           return "Insira a dificuldade entre 1 e 5";
@@ -85,7 +91,7 @@ class _FormScreenState extends State<FormScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       validator: (String? value) {
-                        if (value!.isEmpty) {
+                        if (value == null || value.isEmpty) {
                           return "Insira um URL de Imagem!";
                         }
                         return null;
@@ -138,7 +144,8 @@ class _FormScreenState extends State<FormScreen> {
                           imageController.text,
                           int.parse(difficultyController.text),
                         );
-                        ScaffoldMessenger.of(context).showSnackBar(
+                        /* taskContext => contexto da outra tela */
+                        ScaffoldMessenger.of(widget.taskContext).showSnackBar(
                           const SnackBar(
                             content: Text("Criando uma nova tarefa"),
                           ),
