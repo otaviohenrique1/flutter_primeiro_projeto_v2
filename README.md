@@ -1,16 +1,27 @@
 # flutter_primeiro_projeto_v2
 
-A new Flutter project.
+## Projeto feito no curso 'Flutter: Controller, navegação e estados' na Alura
 
-## Getting Started
+## Descrição
 
-This project is a starting point for a Flutter application.
+Nova versão do projeto 'flutter_primeiro_projeto_v1' do curso 'Flutter: Widgets, Stateless, Stateful, Imagens e Animações' na Alura.
 
-A few resources to get you started if this is your first Flutter project:
+### Diferenças com a versão flutter_primeiro_projeto_v1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Gerenciamento de estados com setState
+- Gerenciamento de estados com InheritedWidget
+- Navegação entre telas
+- Formularios com controller
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Links
+
+- Dart
+  1. [Pagina oficial](https://dart.dev/)
+  2. [Documentação](https://dart.dev/guides)
+
+- Flutter
+  1. [Pagina oficial](https://flutter.dev/)
+  2. [Documentação](https://docs.flutter.dev/)
+
+- Pub.dev
+  1. [Pagina oficial](https://pub.dev/)
